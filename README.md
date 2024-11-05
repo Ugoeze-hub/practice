@@ -1,2 +1,4 @@
-This is a repository to ppractice the matplotlib module
+This is a repository to practice stuffs
+
+
 
