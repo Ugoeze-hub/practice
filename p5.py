@@ -13,12 +13,13 @@ mydb = mysql.connector.connect(
 # mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
 # mycursor = mydb.cursor()
 
+
+
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-val = ("Michelle", "Blue Village")
-mycursor.execute(sql, val)
+mycursor.execute("SELECT * FROM customers LIMIT 5 OFFSET 2")
 
-mydb.commit()
+myresult = mycursor.fetchall()
 
-print("1 record inserted, ID:", mycursor.lastrowid)
+for x in myresult:
+  print(x)
